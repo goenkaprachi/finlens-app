@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLens | Margin Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            FinLens
+        </div>
+        <ul class="nav">
+            <li class="active">Dashboard</li>
+            <li>Pricing Intel</li>
+            <li>Margin Reports</li>
+            <li>Settings</li>
+        </ul>
+        <div class="metrics" id="sidebar-metrics">
+            <!-- Loaded dynamically -->
+        </div>
+    </div>
+
+    <main class="content">
+        <header>
+            <div class="header-left">
+                <h1>Pricing × Margin Intelligence</h1>
+                <p>Live competitor analysis vs internal margin</p>
+            </div>
+            <div class="header-right">
+                <span class="badge" id="refresh-badge">Syncing...</span>
+            </div>
+        </header>
+
+        <section class="section highlight-section" id="margin-join-section">
+            <div class="section-header">
+                <h2>🔥 Margin Risk (The Join)</h2>
+                <p>SKUs where competitor pricing likely explains margin decline</p>
+            </div>
+            <div class="cards-grid" id="margin-cards">
+                <!-- Cards injected via JS -->
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Revenue at Risk</h2>
+                <p>If we cut price to match competitors, what is the margin impact?</p>
+            </div>
+            <div class="table-container">
+                <table id="revenue-table">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Unit Vol</th>
+                            <th>Curr. Margin</th>
+                            <th>Our Price</th>
+                            <th>Comp Price</th>
+                            <th>Monthly Profit Swing (INR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Live Pricing Tracker</h2>
+                <p>All SKUs vs scraped market prices</p>
+            </div>
+            <div class="table-container">
+                <table id="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Product</th>
+                            <th>Our Price</th>
+                            <th>Market Best</th>
+                            <th>Delta %</th>
+                            <th>Status / Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
