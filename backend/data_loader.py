@@ -11,7 +11,13 @@ def get_pricing():
     # Process "Scraped At (UTC)" to handle None values
     df['Scraped At (UTC)'] = df['Scraped At (UTC)'].fillna('STALE')
     
+    # Replace NaNs with None for JSON compliance robustly
     records = df.to_dict('records')
+    for r in records:
+        for k, v in r.items():
+            if pd.isna(v):
+                r[k] = None
+                
     return records
 
 def get_margin_join():
@@ -57,7 +63,13 @@ def get_revenue_at_risk():
     df = df[~df['SKU'].str.contains('Cross-reference', na=False, case=False)]
     df = df[~df['SKU'].str.contains('Presented as evidence', na=False, case=False)]
     
+    # Replace NaNs with None for JSON compliance robustly
     records = df.to_dict('records')
+    for r in records:
+        for k, v in r.items():
+            if pd.isna(v):
+                r[k] = None
+                
     return records
 
 def get_summary():
