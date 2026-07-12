@@ -3,8 +3,8 @@ const API_URL = window.location.hostname === 'localhost' || window.location.host
     : ''; // On Render, it's relative if hosted together, but we deploy separately. Wait, we should use a relative path if deployed on same domain, or inject it. For now, assume localhost:8000 for local.
 
 // The guide says we can use env vars for Vercel, but for local it's 8000.
-// Let's make it easy to configure:
-const BASE_URL = 'http://localhost:8000';
+// In production on Render, point to the deployed backend
+const BASE_URL = 'https://finlens-api.onrender.com';
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
